@@ -6,7 +6,6 @@ import requests
 import string
 import nltk
 from nltk.corpus import stopwords
-nltk.download('stopwords')
 from textblob import TextBlob
 
 # Load historical data (replace with your data loading logic)
