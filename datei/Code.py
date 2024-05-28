@@ -9,6 +9,7 @@ from nltk.corpus import stopwords
 from textblob import TextBlob
 #from App import CodeApp
 
+
 # Load historical data (replace with your data loading logic)
 
 data = pd.read_csv("datei/googletest.csv", encoding="utf-8", delimiter=";")

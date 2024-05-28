@@ -21,6 +21,7 @@ if submitted:
     st.session_state.News = news_headline
     st.session_state.Price = stockprice_yesterday
 
+
 def output(preis):
     st.write(preis)
 
