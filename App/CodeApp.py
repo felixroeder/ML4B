@@ -11,7 +11,6 @@ st.image("https://t4.ftcdn.net/jpg/02/20/32/75/240_F_220327557_gRDTuYL4iVG0lWrjg
 
 st.session_state.News = ""
 st.session_state.Price = ""
-st.session_state.result = ""
 
 with st.form(key="News and stock data"):
     news_headline = st.text_input("Enter News Headline(s)")
@@ -21,7 +20,8 @@ with st.form(key="News and stock data"):
 if submitted:
     st.session_state.News = news_headline
     st.session_state.Price = stockprice_yesterday
-    st.session_state.result = Code.create_new_price(news_headline, stockprice_yesterday)
-    st.write(st.session_state.result)
+
+def output(preis):
+    st.write(preis)
 
 data_load_state = st.text("Load data...")
