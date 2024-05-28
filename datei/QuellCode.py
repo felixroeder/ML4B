@@ -7,7 +7,7 @@ import string
 import nltk
 from nltk.corpus import stopwords
 from textblob import TextBlob
-#from App import CodeApp
+from App import CodeApp
 
 
 # Load historical data (replace with your data loading logic)
