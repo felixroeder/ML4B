@@ -33,5 +33,6 @@ if st.session_state.submitted:
     st.success('Hier würde jetzt der morgige Kurs stehen wenn das Modell fertig wäre')
 
     # Zusätzlicher Slider für Investitionspräferenz
-    invest_preference = st.slider('Wie gerne investieren Sie am Aktienmarkt? (1-10)', 1, 10, 5)
-    st.write(f'Danke für die Teilnahme')
+    with st.form(key='my_form1'):
+        Ranking = st.number_input(label='Wie gerne investieren Sie am Aktienmarkt?', max_value = 10, min_value = 1)
+        submit_button = st.form_submit_button(label='Submit')
