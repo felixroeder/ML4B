@@ -102,7 +102,7 @@ model.fit(train_sequences, train_labels, epochs=10, batch_size=32)
 predicted_price = model.predict(test_sequences)
 print(predicted_price[0])
 
-#####################Neue Nachrichten einbauen
+##################### Neue Nachrichten einbauen
 
 def create_new_price(news, price):
     #CodeApp.output("130")
