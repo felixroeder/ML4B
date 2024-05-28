@@ -2,7 +2,7 @@
 import streamlit as st
 import datetime
 from datetime import date
-from  Zwischenabgabe import Code
+from datei import Code
 
 
 st.title("Stock Prediction App")
