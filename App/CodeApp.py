@@ -20,7 +20,7 @@ with st.form(key="News and stock data"):
 if submitted:
     st.session_state.News = news_headline
     st.session_state.Price = stockprice_yesterday
-    st.write("Hallo, hier sollte jetzt der Preis für den morgigen Kurs stehen. Leider ist das Modell noch nicht fertig :(")
+    st.success("Hier würde jetzt der morgige Kurs stehen wenn das Modell fertig wäre")
 
 
 
