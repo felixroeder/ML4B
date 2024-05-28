@@ -37,6 +37,7 @@ if st.session_state.submitted:
     with st.form(key='my_form1'):
         Ranking = st.number_input(label='Wie gerne investieren Sie am Aktienmarkt?', max_value = 10, min_value = 1)
         submit_button = st.form_submit_button(label='Submit')
+    if submit_button:
         st.session_state.submitted = True
 
     if st.session_state.submitted:
