@@ -7,7 +7,7 @@ import string
 import nltk
 from nltk.corpus import stopwords
 from textblob import TextBlob
-from App import CodeApp
+#from App import CodeApp
 
 # Load historical data (replace with your data loading logic)
 
@@ -104,7 +104,7 @@ print(predicted_price[0])
 #####################Neue Nachrichten einbauen
 
 def create_new_price(news, price):
-    CodeApp.output("130")
+    #CodeApp.output("130")
     # # Append new rows to the existing DataFrame
     # updated_stock_df = pd.concat([existing_stock_df, new_stock_data_df], ignore_index=True)
     # # Use the model for future predictions (replace with your new data)
