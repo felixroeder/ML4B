@@ -11,7 +11,7 @@ from textblob import TextBlob
 
 # Load historical data (replace with your data loading logic)
 
-data = pd.read_csv("C:/Users/Felix/OneDrive/10_FAU/Semester 6/Machine Learning for Business/googletest.csv", encoding="utf-8", delimiter=";")
+data = pd.read_csv("/workspaces/ML4B/Zwischenabgabe/googletest.csv", encoding="utf-8", delimiter=";")
 date_col = "Date"  # Column containing the date
 price_col = "Close"  # Column containing the closing price
 news_col = "News_Article"  # Column containing the news text (optional)
@@ -103,100 +103,25 @@ print(predicted_price[0])
 
 #####################Neue Nachrichten einbauen
 
-# Define your API key and endpoint
-api_key = '5a9f2b08c11f43b0a3fcde731a6b8707'
-endpoint = 'https://newsapi.org/v2/everything'
+def create_new_price(news, price):
+    # # Append new rows to the existing DataFrame
+    # updated_stock_df = pd.concat([existing_stock_df, new_stock_data_df], ignore_index=True)
+    # # Use the model for future predictions (replace with your new data)
+    # new_news = preprocess_text("Your new news article")  # Preprocess new news article
+    # new_news_sequence = vectorizer(np.array([new_news]))
+    # new_price_data = data[price_col]
+    # # Include logic for new price data (replace with your actual approach)
+    # # Assuming you want to use the most recent closing price
+    # new_price_data = np.array([[data[price_col].iloc[-1]]])  # Access the last closing price
+    # # Combine new news and price data
+    # new_data = {
+    #     "news": new_news_sequence,
+    #     "price": new_price_data
+    # }
+    # new_sentiment = get_binary_sentiment(new_news)
 
-# Parameters for the API request
-params = {
-    'q': 'finance',
-    'apiKey': api_key,
-    'language': 'en',
-    'sortBy': 'publishedAt'
-}
-
-# Function to fetch news and return a DataFrame
-def fetch_financial_news(api_endpoint, parameters):
-    response = requests.get(api_endpoint, params=parameters)
-    news_data = response.json()
-
-    articles = news_data.get('articles', [])
-    
-    # Extract headlines and publication dates
-    data = [(article['title'], article['publishedAt']) for article in articles]
-    
-    # Create a DataFrame
-    df = pd.DataFrame(data, columns=['Headline', 'Date'])
-    
-    # Convert 'Date' from string to datetime
-    df['Date'] = pd.to_datetime(df['Date'])
-    
-    return df
-
-###bzw. bei existierendem DataFrame (wie in unserem Fall)
-existing_df = pd.DataFrame(columns=['Headline', 'Date'])  # Or load from an existing file
-
-# Fetch new financial news
-new_news_df = fetch_financial_news(endpoint, params)
-
-# Append new rows to the existing DataFrame
-updated_df = pd.concat([existing_df, new_news_df], ignore_index=True)
-
-# Optionally, save the updated DataFrame to a CSV file
-updated_df.to_csv('financial_news.csv', index=False)
-
-# Function to fetch stock data and return a DataFrame
-def fetch_stock_data(ticker, start_date, end_date):
-    stock = yf.Ticker(ticker)
-    data = stock.history(start=start_date, end=end_date)
-    
-    # Reset the index to make 'Date' a column
-    data.reset_index(inplace=True)
-    
-    # Keep only the relevant columns
-    data = data[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
-    
-    return data
-
-# Parameters
-ticker_symbol = 'AAPL'  # Example ticker symbol for Apple Inc.
-start_date = '2022-01-01'
-end_date = '2022-12-31'
-
-#bzw. bei existierendem DataFrame
-existing_stock_df = pd.DataFrame(columns=['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])  # Or load from an existing file
-
-# Fetch new stock data
-new_stock_data_df = fetch_stock_data(ticker_symbol, start_date, end_date)
-
-# Append new rows to the existing DataFrame
-updated_stock_df = pd.concat([existing_stock_df, new_stock_data_df], ignore_index=True)
-
-# Optionally, save the updated DataFrame to a CSV file
-updated_stock_df.to_csv('stock_prices.csv', index=False)
-
-# Use the model for future predictions (replace with your new data)
-new_news = preprocess_text("Your new news article")  # Preprocess new news article
-new_news_sequence = vectorizer(np.array([new_news]))
-new_price_data = data[price_col]
-
-# Include logic for new price data (replace with your actual approach)
-# Assuming you want to use the most recent closing price
-new_price_data = np.array([[data[price_col].iloc[-1]]])  # Access the last closing price
-
-# Combine new news and price data
-new_data = {
-    "news": new_news_sequence,
-    "price": new_price_data
-}
-
-new_sentiment = get_binary_sentiment(new_news)
-
-# Create a sequence from the new data
-new_sequence = create_sequences(new_news_sequence, new_price_data, new_sentiment, look_back)
-new_sequence = np.array(new_sequence)
-
-# Predict the future price using the trained model
-# NOCH KEINE NEUTEN DATEN EINGEPFLEGT #predicted_price = model.predict(new_sequence)  # Access the first element from the prediction
-
-#print(f"Predicted future price: {predicted_price}")
+    # # Create a sequence from the new data
+    # new_sequence = create_sequences(new_news_sequence, new_price_data, new_sentiment, look_back)
+    # new_sequence = np.array(new_sequence)
+    # predicted_price = model.predict(new_sequence)  # Access the first element from the prediction
+    return "Hallo"
