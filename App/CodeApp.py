@@ -14,6 +14,7 @@ st.image("https://t4.ftcdn.net/jpg/02/20/32/75/240_F_220327557_gRDTuYL4iVG0lWrjg
 # Zustand des Formulars initialisieren
 if 'submitted' not in st.session_state:
     st.session_state.submitted = False
+    st.session_sate.submitted2 = False
 
 # Formular erstellen und anzeigen, wenn es noch nicht abgesendet wurde
 if not st.session_state.submitted:
@@ -36,3 +37,6 @@ if st.session_state.submitted:
     with st.form(key='my_form1'):
         Ranking = st.number_input(label='Wie gerne investieren Sie am Aktienmarkt?', max_value = 10, min_value = 1)
         submit_button = st.form_submit_button(label='Submit')
+
+    if st.session_state.submitted2:
+        st.success('Vielen Dank!')
