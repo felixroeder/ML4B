@@ -13,8 +13,8 @@ st.session_state.News = ""
 st.session_state.Price = ""
 
 with st.form(key="News and stock data"):
-    news_headline = st.text_input("Enter News Headline(s)")
-    stockprice_yesterday = st.text_input("Yesterdays closing Stock Price (currently Google only)")
+    news_headline = st.text_input("Enter News Headline(s), the more the better ;)")
+    stockprice_yesterday = st.text_input("Yesterdays closing Stock Price (currently Google [Alphabet] only)")
     submitted = st.form_submit_button("Submit")
 
 if submitted:
@@ -23,5 +23,3 @@ if submitted:
     st.success("Hier würde jetzt der morgige Kurs stehen wenn das Modell fertig wäre")
 
 
-
-data_load_state = st.text("Load data...")
