@@ -14,7 +14,6 @@ st.image("https://t4.ftcdn.net/jpg/02/20/32/75/240_F_220327557_gRDTuYL4iVG0lWrjg
 # Zustand des Formulars initialisieren
 if 'submitted' not in st.session_state:
     st.session_state.submitted = False
-    st.session_state.submitted2 = False
 
 # Formular erstellen und anzeigen, wenn es noch nicht abgesendet wurde
 if not st.session_state.submitted:
@@ -32,7 +31,8 @@ if not st.session_state.submitted:
 # Zeigen Sie die Erfolgsmeldung und den Slider, nachdem das Formular abgesendet wurde
 if st.session_state.submitted:
     st.success('Hier würde jetzt der morgige Kurs stehen wenn das Modell fertig wäre')
-
+    st.session_state.submitted = False
+    
     # Zusätzlicher Slider für Investitionspräferenz
     with st.form(key='my_form1'):
         Ranking = st.number_input(label='Wie gerne investieren Sie am Aktienmarkt?', max_value = 10, min_value = 1)
