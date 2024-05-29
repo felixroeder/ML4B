@@ -6,7 +6,7 @@ from folder1.QuellCode import preprocess_text
 
 # Titel der App
 st.title("Stock Prediction App")
-st.subheader('This app is created to forecast the stock market movement using daily news headlines')
+st.subheader('APP IST WORK IN PROGRESS - This app is created to forecast the stock market movement using daily news headlines')
 st.image("https://t4.ftcdn.net/jpg/02/20/32/75/240_F_220327557_gRDTuYL4iVG0lWrjgjrv1chBCUunjKlG.jpg")
 
 
