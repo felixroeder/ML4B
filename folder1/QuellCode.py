@@ -10,7 +10,7 @@ from textblob import TextBlob
 
 # Load historical data (replace with your data loading logic)
 
-data = pd.read_csv("datei/googletest.csv", encoding="utf-8", delimiter=";")
+data = pd.read_csv("folder1/googletest.csv", encoding="utf-8", delimiter=";")
 date_col = "Date"  # Column containing the date
 price_col = "Close"  # Column containing the closing price
 news_col = "News_Article"  # Column containing the news text (optional)
@@ -103,7 +103,6 @@ print(predicted_price[0])
 ##################### Neue Nachrichten einbauen
 
 def create_new_price(news, price):
-    #CodeApp.output("130")
     # # Append new rows to the existing DataFrame
     # updated_stock_df = pd.concat([existing_stock_df, new_stock_data_df], ignore_index=True)
     # # Use the model for future predictions (replace with your new data)
