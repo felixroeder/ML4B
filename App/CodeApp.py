@@ -1,7 +1,11 @@
 import streamlit as st
 import datetime
 from datetime import date
+import sys
 
+sys.path.append('/workspaces/ML4B/folder1')
+
+from App import CodeApp
 
 # Titel der App
 st.title("Stock Prediction App")
