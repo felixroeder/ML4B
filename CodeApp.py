@@ -5,7 +5,7 @@ import sys
 
 sys.path.append('/workspaces/ML4B/folder1')
 
-from App import CodeApp
+from folder1 import QuellCode
 
 # Titel der App
 st.title("Stock Prediction App")
