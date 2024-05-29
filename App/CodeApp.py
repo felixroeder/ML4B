@@ -2,9 +2,6 @@ import streamlit as st
 import datetime
 from datetime import date
 
-#from datei import QuellCode
-
-
 
 # Titel der App
 st.title("Stock Prediction App")
