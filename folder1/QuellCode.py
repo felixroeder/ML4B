@@ -103,25 +103,20 @@ print(predicted_price[0])
 
 ##################### Neue Nachrichten einbauen
 
-def create_new_price(news, price):
-    # # Append new rows to the existing DataFrame
-    # updated_stock_df = pd.concat([existing_stock_df, new_stock_data_df], ignore_index=True)
-    # # Use the model for future predictions (replace with your new data)
-    # new_news = preprocess_text("Your new news article")  # Preprocess new news article
-    # new_news_sequence = vectorizer(np.array([new_news]))
-    # new_price_data = data[price_col]
-    # # Include logic for new price data (replace with your actual approach)
-    # # Assuming you want to use the most recent closing price
-    # new_price_data = np.array([[data[price_col].iloc[-1]]])  # Access the last closing price
-    # # Combine new news and price data
-    # new_data = {
-    #     "news": new_news_sequence,
-    #     "price": new_price_data
-    # }
-    # new_sentiment = get_binary_sentiment(new_news)
+def create_new_price(new_news, price):
+    # Append new rows to the existing DataFrame
+    new_news_df = pd.concat([news_col, new_news], ignore_index=True)
+    # Use the model for future predictions (replace with your new data)
+    new_news = preprocess_text(new_news_df)  # Preprocess new news article
+    new_news_sequence = vectorizer(np.array([new_news]))
+    # Include logic for new price data (replace with your actual approach)
+    new_price_data = np.array([[data[price_col].iloc[-1] + price]])  # Access the last closing price
+    # Combine new news and price data
+    
+    new_sentiment = get_binary_sentiment(new_news)
 
-    # # Create a sequence from the new data
-    # new_sequence = create_sequences(new_news_sequence, new_price_data, new_sentiment, look_back)
-    # new_sequence = np.array(new_sequence)
-    # predicted_price = model.predict(new_sequence)  # Access the first element from the prediction
-    return "Hallo"
+    # Create a sequence from the new data
+    new_sequence = create_sequences(new_news_sequence, new_price_data, new_sentiment, look_back)
+    new_sequence = np.array(new_sequence)
+    predicted_price = model.predict(new_sequence)  # Access the first element from the prediction
+    return predicted_price
