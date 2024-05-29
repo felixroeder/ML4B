@@ -3,7 +3,7 @@ import datetime
 from datetime import date
 import tensorflow as tf
 
-from folder1.QuellCode import create_new_price
+#from folder1.QuellCode import create_new_price
 
 # Titel der App
 st.title("Stock Prediction App")
