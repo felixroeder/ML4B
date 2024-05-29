@@ -30,7 +30,7 @@ if not st.session_state.submitted:
 # Zeigen Sie die Erfolgsmeldung und den Slider, nachdem das Formular abgesendet wurde
 if st.session_state.submitted:
     st.success('Hier würde jetzt der morgige Kurs stehen wenn das Modell fertig wäre')
-    st.success(create_new_price(st.session_state.news, st.session_state.price))
+    #st.success(create_new_price(st.session_state.news, st.session_state.price))
     st.session_state.submitted = False
     
     # Zusätzlicher Slider für Investitionspräferenz
