@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 from datetime import date
+import tensorflow as tf
 
 #from folder1.QuellCode import create_new_price
 
