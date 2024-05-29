@@ -1,10 +1,6 @@
 import streamlit as st
 import datetime
 from datetime import date
-import tensorflow as tf
-import pandas as pd
-from nltk.corpus import stopwords
-import string
 
 #from folder1.QuellCode import create_new_price
 
