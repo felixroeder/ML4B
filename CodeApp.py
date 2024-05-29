@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 from datetime import date
 
-from folder1.QuellCode import create_new_price
+from folder1.QuellCode import preprocess_text
 
 # Titel der App
 st.title("Stock Prediction App")
@@ -30,7 +30,7 @@ if not st.session_state.submitted:
 # Zeigen Sie die Erfolgsmeldung und den Slider, nachdem das Formular abgesendet wurde
 if st.session_state.submitted:
     st.success('Hier würde jetzt der morgige Kurs stehen wenn das Modell fertig wäre')
-    #st.success(preprocess_text(st.session_state.news))
+    st.success(preprocess_text(st.session_state.news))
     st.session_state.submitted = False
     
     # Zusätzlicher Slider für Investitionspräferenz
