@@ -14,7 +14,8 @@
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "vahidk.tensorflow-snippets"
+        "vahidk.tensorflow-snippets",
+        "changkaiyan.tf2snippets"
       ]
     }
   },
