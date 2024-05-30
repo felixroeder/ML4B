@@ -11,7 +11,7 @@ from textblob import TextBlob
 
 # Load historical data (replace with your data loading logic)
 
-data = pd.read_csv("folder1/googletest.csv", encoding="utf-8", delimiter=";")
+data = pd.read_csv("Projekt1/folder1/googletest.csv", encoding="utf-8", delimiter=";")
 date_col = "Date"  # Column containing the date
 price_col = "Close"  # Column containing the closing price
 news_col = "News_Article"  # Column containing the news text (optional)
